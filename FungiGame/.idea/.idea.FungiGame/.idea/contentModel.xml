@@ -7,8 +7,17 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="AbstractMushroom.cs" t="Include" />
-          <e p="BasicMushroom.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="Levels" t="Include">
+            <e p="AbstractLevelCreator.cs" t="Include" />
+          </e>
+          <e p="Mushrooms" t="Include">
+            <e p="AbstractMushroom.cs" t="Include" />
+            <e p="BasicMushroom.cs" t="Include" />
+          </e>
+          <e p="Saving" t="Include">
+            <e p="PlayerData.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="FungiGame.sln" t="IncludeFlat" />
