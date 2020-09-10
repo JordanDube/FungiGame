@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class PlayerData
 {
     public string shopName;
     public float timePlayed;
+    public bool chestUnlocked;
     public int[] mushroomAmounts; //Determines which mushroom player has for index slot
     public int[] onDisplay; //Set mushroom index number for each display slot
     public string[] mushroomNames;
@@ -21,6 +22,7 @@ public class PlayerData
     {
          shopName = data.shopName;
          timePlayed = data.timePlayed;
+         chestUnlocked = data.chestUnlocked;
          mushroomAmounts = new int[10]; //One for each kind, adjust as needed
          for(int i = 0; i < mushroomAmounts.Length; i++)
          {
