@@ -29,6 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Saving/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/KeyboardHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Saving/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Fungi/Class1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -36,8 +39,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/BasicMushroom.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AbstractMushroom.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$USER_HOME$/Desktop/testing.html" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Saving/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Saving/SaveSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/KeyboardHandler.cs" />
       </list>
     </option>
   </component>
@@ -82,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1599004015007</updated>
       <workItem from="1599004020124" duration="5838000" />
-      <workItem from="1599525874185" duration="2889000" />
+      <workItem from="1599525874185" duration="9633000" />
     </task>
     <servers />
   </component>

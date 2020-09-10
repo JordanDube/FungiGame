@@ -17,6 +17,12 @@
           </e>
           <e p="Saving" t="Include">
             <e p="PlayerData.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="Shop" t="Include">
+              <e p="KeyboardHandler.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>
