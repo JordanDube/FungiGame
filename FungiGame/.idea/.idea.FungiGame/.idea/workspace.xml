@@ -42,8 +42,8 @@
         <option value="$USER_HOME$/Desktop/testing.html" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Saving/PlayerData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Saving/SaveSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Shop/KeyboardHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>

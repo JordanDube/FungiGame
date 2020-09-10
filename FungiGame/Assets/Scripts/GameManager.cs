@@ -62,4 +62,10 @@ public class GameManager : MonoBehaviour
         binocularUpgradeNumber = data.binocularUpgradeNumber;
     }
     #endregion
+
+    public void SaveMushroomName(int index, string name)
+    {
+        mushroomNames[index] = name;
+        //ToDo: UpdateDisplayNames();
+    }
 }

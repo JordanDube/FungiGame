@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: dfd96bf051adc4e40a5bf91841809b4a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Wash Your Hand
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c4d50b477ac6db74e94af1ff76af6c50, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
