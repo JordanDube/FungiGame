@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int shelvesMade;
     public int currentPayments;
     public int backpackUpgradeNumber; //what upgrade number it's currently at
-    public int binocularUpgradeNumber;//what upgrade number it's currently at
+    public int binocularUpgradeNumber = 1;//what upgrade number it's currently at ToDo: reset to zero when done testing
     //public bool[] areasUnlocked; //If we get to it\
 
     #region "Save/Load"

@@ -10,6 +10,14 @@
           <e p="GameManager.cs" t="Include" />
           <e p="Levels" t="Include">
             <e p="AbstractLevelCreator.cs" t="Include" />
+            <e p="AbstractTiles.cs" t="Include" />
+            <e p="Backyard" t="Include">
+              <e p="BackyardLevel.cs" t="Include" />
+              <e p="Tiles" t="Include">
+                <e p="BackyardTile.cs" t="Include" />
+              </e>
+            </e>
+            <e p="ISetListNumber.cs" t="Include" />
           </e>
           <e p="Mushrooms" t="Include">
             <e p="AbstractMushroom.cs" t="Include" />
