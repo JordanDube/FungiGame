@@ -12,15 +12,17 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
     public GameObject highlightAnim;
     private BackyardLevel backyard;
     private GameManager gameManager;
+    private GatherMushroomHandler gatherHandler;
     private int binocularUpgradeNum;
-    private int areaAmount;
+    private int mushroomTiles = 0;
+    private bool outerMush = false;
 
     private void Awake()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-        areaAmount = FindObjectOfType<GameManager>().binocularUpgradeNumber;
         highlightAnim.SetActive(false);
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        gatherHandler = FindObjectOfType<GatherMushroomHandler>().GetComponent<GatherMushroomHandler>();
         binocularUpgradeNum = gameManager.binocularUpgradeNumber;
         if (inBackyard)
         {
@@ -51,6 +53,7 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
 
     private void OnMouseExit()
     {
+        outerMush = false;
         switch (binocularUpgradeNum)
         {
             case 0: TurnOffHighlight();
@@ -66,6 +69,23 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
         }
     }
 
+    private void OnMouseDown()
+    {
+        switch (binocularUpgradeNum)
+            {
+                case 0: CheckOne();
+                    break;
+                case 1: CheckThree();
+                    break;
+                case 2: CheckFour();
+                    break;
+                case 3: CheckFive();
+                    break;
+                case 4: CheckNine();
+                    break;
+            }
+        }
+
     public void TurnOnHighlight()
     {
         highlightAnim.SetActive(true);
@@ -73,6 +93,15 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
     public void TurnOffHighlight()
     {
         highlightAnim.SetActive(false);
+    }
+
+    public void CheckOne()
+    {
+        if (canHoldMushroom)
+        {
+            mushroomTiles++;
+            gatherHandler.HuntArea(mushroomTiles);
+        }
     }
 
     #region "Area Sizes"
@@ -124,7 +153,32 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
             backyard.tilesInPlay[listNumber + 1].GetComponent<BackyardTile>().TurnOffHighlight();
         }
     }
-    
+
+    private void CheckThree()
+    {
+        if (listNumber % backyard.cols != 0)
+        {
+            if (backyard.tilesInPlay[listNumber - 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+
+        if ((listNumber + 1) %backyard.cols != 0)
+        {
+            if (backyard.tilesInPlay[listNumber + 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+
+        if (outerMush || canHoldMushroom)
+        {
+            gatherHandler.HuntArea(mushroomTiles);
+        }
+    }
     private void SquareFourAreaOn()
     {
         TurnOnHighlight();
@@ -178,6 +232,40 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
             {
                 backyard.tilesInPlay[listNumber + backyard.cols - 1].GetComponent<BackyardTile>().TurnOffHighlight();
             }
+        }
+    }
+
+    private void CheckFour()
+    {
+        if (listNumber % backyard.cols != 0)
+        {
+            if (backyard.tilesInPlay[listNumber - 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+
+        if (listNumber + backyard.cols < backyard.tilesInPlay.Length)
+        {
+            if (backyard.tilesInPlay[listNumber + backyard.cols].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+            if (listNumber % backyard.cols != 0)
+            {
+                if (backyard.tilesInPlay[listNumber + backyard.cols - 1].GetComponent<BackyardTile>().canHoldMushroom)
+                {
+                    mushroomTiles++;
+                    outerMush = true;
+                }
+            }
+        }
+        
+        if (outerMush || canHoldMushroom)
+        {
+            gatherHandler.HuntArea(mushroomTiles);
         }
     }
     
@@ -280,6 +368,82 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
             }
         }
     }
+
+    private void CheckNine()
+    {
+        if (listNumber % backyard.cols != 0)
+        {
+            if (backyard.tilesInPlay[listNumber - 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+
+        if ((listNumber + 1) %backyard.cols != 0)
+        {
+            if (backyard.tilesInPlay[listNumber + 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+        
+        if (listNumber + backyard.cols < backyard.tilesInPlay.Length)
+        {
+            if (backyard.tilesInPlay[listNumber + backyard.cols].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+            if (listNumber % backyard.cols != 0)
+            {
+                if (backyard.tilesInPlay[listNumber + backyard.cols - 1].GetComponent<BackyardTile>().canHoldMushroom)
+                {
+                    mushroomTiles++;
+                    outerMush = true;
+                }
+            }
+            if ((listNumber + 1) %backyard.cols != 0)
+            {
+                if (backyard.tilesInPlay[listNumber + backyard.cols + 1].GetComponent<BackyardTile>().canHoldMushroom)
+                {
+                    mushroomTiles++;
+                    outerMush = true;
+                }
+            }
+        }
+        
+        if (listNumber - backyard.cols >= 0)
+        {
+            if (backyard.tilesInPlay[listNumber - backyard.cols].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+            if (listNumber % backyard.cols != 0)
+            {
+                if (backyard.tilesInPlay[listNumber - backyard.cols - 1].GetComponent<BackyardTile>().canHoldMushroom)
+                {
+                    mushroomTiles++;
+                    outerMush = true;
+                }
+            }
+            if ((listNumber + 1) %backyard.cols != 0)
+            {
+                if (backyard.tilesInPlay[listNumber - backyard.cols + 1].GetComponent<BackyardTile>().canHoldMushroom)
+                {
+                    mushroomTiles++;
+                    outerMush = true;
+                }
+            }
+            
+        }
+        if (outerMush || canHoldMushroom)
+        {
+            gatherHandler.HuntArea(mushroomTiles);
+        }
+    }
     
     private void CrossFiveAreaOn()
     {
@@ -346,6 +510,50 @@ public class AbstractTiles : MonoBehaviour, ISetListNumber
         if (listNumber - backyard.cols >= 0)
         {
             backyard.tilesInPlay[listNumber - backyard.cols].GetComponent<BackyardTile>().TurnOffHighlight();
+        }
+    }
+
+    private void CheckFive()
+    {
+        if (listNumber % backyard.cols != 0)
+        {
+            if (backyard.tilesInPlay[listNumber - 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+
+        if ((listNumber + 1) %backyard.cols != 0)
+        {
+            if(backyard.tilesInPlay[listNumber + 1].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+        
+        if (listNumber + backyard.cols < backyard.tilesInPlay.Length)
+        {
+            if(backyard.tilesInPlay[listNumber + backyard.cols].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+        
+        if (listNumber - backyard.cols >= 0)
+        {
+            if(backyard.tilesInPlay[listNumber - backyard.cols].GetComponent<BackyardTile>().canHoldMushroom)
+            {
+                mushroomTiles++;
+                outerMush = true;
+            }
+        }
+        
+        if (outerMush || canHoldMushroom)
+        {
+            gatherHandler.HuntArea(mushroomTiles);
         }
     }
     #endregion

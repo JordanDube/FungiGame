@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +9,25 @@ public class GameManager : MonoBehaviour
     public float timePlayed;
     public bool chestUnlocked;
     public int[] mushroomAmounts; //Determines which mushroom player has for index slot
-    public int[] onDisplay; //Set mushroom index number for each display slot
-    public string[] mushroomNames;
-    public bool[] mushroomsSold; //tracks if mushrooms have been sold before to show prices
-    public bool[] tasksCompleted;
+    public int[] onDisplay = new int[6]; //Set mushroom index number for each display slot
+    public string[] mushroomNames = new string[10];
+    public bool[] mushroomsSold = new bool[10]; //tracks if mushrooms have been sold before to show prices
+    public bool[] tasksCompleted = new bool[10];
     public int shelvesMade;
     public int currentPayments;
+    public int[] backpackContents = new int[10];
     public int backpackUpgradeNumber; //what upgrade number it's currently at
     public int binocularUpgradeNumber = 1;//what upgrade number it's currently at ToDo: reset to zero when done testing
     //public bool[] areasUnlocked; //If we get to it\
+
+    private void Awake()
+    {
+        onDisplay = new int[6];
+        mushroomNames = new string[10];
+        mushroomsSold = new bool[10];
+        tasksCompleted = new bool[10];
+        backpackContents = new int[10];
+    }
 
     #region "Save/Load"
     public void SaveGame()

@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 36960730294384340}
   - component: {fileID: 8848307117950758276}
   m_Layer: 0
-  m_Name: BackyardMush
+  m_Name: BackyardEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c33fb41deb14bf9418981a03c458ea4a, type: 3}
-  m_Color: {r: 0.4227483, g: 0.9433962, b: 0.53590316, a: 1}
+  m_Color: {r: 0.94509804, g: 0.7327371, b: 0.4235294, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a68324a1e442dd4d89397a0711a9c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canHoldMushroom: 1
+  canHoldMushroom: 0
   listNumber: 0
   inBackyard: 1
   sprite: {fileID: 21300000, guid: c33fb41deb14bf9418981a03c458ea4a, type: 3}
