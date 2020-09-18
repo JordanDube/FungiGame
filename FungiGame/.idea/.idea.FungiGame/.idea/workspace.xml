@@ -32,6 +32,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Levels/Backyard/Tiles/BackyardTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Saving/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Gathering/GatherMushroomHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Store/NumberHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Shop/KeyboardHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Levels/Backyard/BackyardLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Saving/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,11 +51,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/Backyard/BackyardLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/ISetListNumber.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/Backyard/Tiles/BackyardTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Saving/PlayerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/AbstractLevelCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Levels/AbstractTiles.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Gathering/GatherMushroomHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Store/BagHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Saving/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Store/MoneyHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Store/NumberHandler.cs" />
       </list>
     </option>
   </component>
@@ -101,6 +105,7 @@
       <workItem from="1599004020124" duration="5838000" />
       <workItem from="1599525874185" duration="9633000" />
       <workItem from="1599835418695" duration="28335000" />
+      <workItem from="1600390187231" duration="3783000" />
     </task>
     <servers />
   </component>
@@ -123,5 +128,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="198" y="206" width="1270" height="1013" key="dock-window-1" timestamp="1600393997442">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="198" y="206" width="1270" height="1013" key="dock-window-1/0.0.2560.1400/-1920.0.1920.1040@0.0.2560.1400" timestamp="1600393997442" />
   </component>
 </project>

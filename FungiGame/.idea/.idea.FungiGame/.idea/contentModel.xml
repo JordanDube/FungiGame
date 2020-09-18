@@ -27,6 +27,12 @@
             <e p="PlayerData.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
           </e>
+          <e p="Store" t="Include">
+            <e p="BagHandler.cs" t="Include" />
+            <e p="MushroomInBag.cs" t="Include" />
+            <e p="NumberHandler.cs" t="Include" />
+            <e p="StoreDisplayHandler.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="Gathering" t="Include">
               <e p="GatherMushroomHandler.cs" t="Include" />

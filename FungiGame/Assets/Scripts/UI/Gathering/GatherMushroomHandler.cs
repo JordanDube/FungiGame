@@ -122,7 +122,7 @@ public class GatherMushroomHandler : MonoBehaviour
         goHomePanel.SetActive(false);
         gatherMenu.SetActive(false);
         //ToDo: Open home UI
-        
+        //ToDo: Clear instantiated mushrooms
     }
 
     public void Explore()
