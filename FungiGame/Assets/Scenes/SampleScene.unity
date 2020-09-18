@@ -1224,7 +1224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &200067181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1831,6 +1831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3003c7ab0b837934b8abfebc7caedc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bagPanel: {fileID: 0}
+  mushroomButtons: []
 --- !u!1 &316372890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,6 +2938,7 @@ MonoBehaviour:
   shelvesMade: 0
   currentPayments: 0
   backpackContents: 
+  totalMoney: 0
   backpackUpgradeNumber: 0
   binocularUpgradeNumber: 4
 --- !u!4 &462395360
@@ -4664,6 +4667,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89227e8f238f2ea498f468aeffab4641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  payScreen: {fileID: 0}
+  bagScreen: {fileID: 0}
+  sightsScreen: {fileID: 0}
+  sellScreen: {fileID: 0}
+  shelfScreen: {fileID: 0}
+  removeScreen: {fileID: 0}
+  moneyTotalText: {fileID: 0}
+  shelfPriceText: {fileID: 0}
+  bagPriceText: {fileID: 0}
+  sightPriceText: {fileID: 0}
+  sellPriceText: {fileID: 0}
+  bonusPercentText: {fileID: 0}
+  rentText: {fileID: 0}
+  displayNames: []
+  mushroomImages: []
+  previewImageLocation: []
+  mushroomNameSell: {fileID: 0}
 --- !u!1 &725093719
 GameObject:
   m_ObjectHideFlags: 0

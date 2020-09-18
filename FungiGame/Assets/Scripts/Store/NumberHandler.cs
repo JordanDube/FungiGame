@@ -12,6 +12,7 @@ public class NumberHandler : MonoBehaviour
     private int money;
     private int bagNum;
     private int sightNum;
+
     
     //Todo add ALL prices and calculate earnings
     private void Awake()

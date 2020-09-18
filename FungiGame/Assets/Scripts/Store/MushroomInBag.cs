@@ -1,18 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MushroomInBag : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int itemNum;
+    
+    public void SendInfo()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        FindObjectOfType<StoreDisplayHandler>().GetComponent<StoreDisplayHandler>().DisplayPriceScreen(itemNum);
     }
 }
