@@ -10,6 +10,14 @@
           <e p="GameManager.cs" t="Include" />
           <e p="Levels" t="Include">
             <e p="AbstractLevelCreator.cs" t="Include" />
+            <e p="AbstractTiles.cs" t="Include" />
+            <e p="Backyard" t="Include">
+              <e p="BackyardLevel.cs" t="Include" />
+              <e p="Tiles" t="Include">
+                <e p="BackyardTile.cs" t="Include" />
+              </e>
+            </e>
+            <e p="ISetListNumber.cs" t="Include" />
           </e>
           <e p="Mushrooms" t="Include">
             <e p="AbstractMushroom.cs" t="Include" />
@@ -19,7 +27,16 @@
             <e p="PlayerData.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />
           </e>
+          <e p="Store" t="Include">
+            <e p="BagHandler.cs" t="Include" />
+            <e p="MushroomInBag.cs" t="Include" />
+            <e p="NumberHandler.cs" t="Include" />
+            <e p="StoreDisplayHandler.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
+            <e p="Gathering" t="Include">
+              <e p="GatherMushroomHandler.cs" t="Include" />
+            </e>
             <e p="Shop" t="Include">
               <e p="KeyboardHandler.cs" t="Include" />
             </e>

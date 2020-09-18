@@ -14,6 +14,8 @@ public class PlayerData
     public bool[] tasksCompleted;
     public int shelvesMade;
     public int currentPayments;
+    public int totalMoney;
+    public int[] backpackContents;
     public int backpackUpgradeNumber; //what upgrade number it's currently at
     public int binocularUpgradeNumber;//what upgrade number it's currently at
     //public bool[] areasUnlocked; //If we get to it
@@ -23,6 +25,7 @@ public class PlayerData
          shopName = data.shopName;
          timePlayed = data.timePlayed;
          chestUnlocked = data.chestUnlocked;
+         totalMoney = data.totalMoney;
          mushroomAmounts = new int[10]; //One for each kind, adjust as needed
          for(int i = 0; i < mushroomAmounts.Length; i++)
          {
@@ -47,6 +50,11 @@ public class PlayerData
          for(int i = 0; i < tasksCompleted.Length; i++)
          {
             tasksCompleted[i] = data.tasksCompleted[i];
+         }
+         backpackContents = new int[10]; //One for each task, adjust as needed
+         for(int i = 0; i < backpackContents.Length; i++)
+         {
+            backpackContents[i] = data.backpackContents[i];
          }
          shelvesMade = data.shelvesMade; //One for each kind, adjust as needed
          currentPayments = data.currentPayments;
