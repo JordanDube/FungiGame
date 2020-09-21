@@ -10,6 +10,7 @@ public class NumberHandler : MonoBehaviour
     private int mushroomsDisplayedNum;
     private int rentRemaining;
     private int money;
+    //private int[] bagSizes = { 5, 10, 15, 20, 25 };
     private int bagNum;
     private int sightNum;
 

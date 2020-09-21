@@ -42,6 +42,9 @@ public class GatherMushroomHandler : MonoBehaviour
                 break;
             case 3: bagSize = 20;
                 break;
+            case 4:
+                bagSize = 25;
+                break;
         }
         for (int i = 0; i < gameManager.backpackContents.Length; i++)
         {
