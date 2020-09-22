@@ -29,6 +29,7 @@
           </e>
           <e p="Store" t="Include">
             <e p="BagHandler.cs" t="Include" />
+            <e p="InDisplayMushroom.cs" t="Include" />
             <e p="MushroomInBag.cs" t="Include" />
             <e p="NumberHandler.cs" t="Include" />
             <e p="StoreDisplayHandler.cs" t="Include" />

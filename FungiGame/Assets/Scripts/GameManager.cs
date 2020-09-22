@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public bool[] tasksCompleted = new bool[10];
     public int shelvesMade;
     public int currentPayments;
-    public int[] backpackContents = new int[10];
+    public int[] backpackContents = new int[10]; //One slot for each mushroom
     public int totalMoney;
     public int backpackUpgradeNumber; //what upgrade number it's currently at
     public int binocularUpgradeNumber = 1;//what upgrade number it's currently at ToDo: reset to zero when done testing

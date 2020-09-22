@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +19,10 @@ public class StoreDisplayHandler : MonoBehaviour
     [SerializeField] private GameObject shelfScreen;
     [SerializeField] private GameObject shelfPriceAcceptButton;
     [SerializeField] private GameObject removeScreen;
-    [SerializeField] private GameObject keyboardScreen;
+    [SerializeField] private GameObject removeScreenAcceptButton;
+    //[SerializeField] private GameObject keyboardScreen;
+    [SerializeField] private GameObject payRentScreen;
+    [SerializeField] private TextMeshProUGUI rentPaymentText;
 
     [Header("Number Texts")] 
     [SerializeField] private TextMeshProUGUI moneyTotalText;
@@ -33,8 +34,10 @@ public class StoreDisplayHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rentText;
     
     [Header("Shelf Displays")]
-    [SerializeField] private TextMeshProUGUI[] displayNames;
-    [SerializeField] private GameObject[] shelfDisplayPosition;
+    //[SerializeField] private TextMeshProUGUI[] displayNames;
+    //[SerializeField] private GameObject[] shelfDisplayPosition;
+    [SerializeField] private GameObject[] shelfMushroomButtons;
+    [SerializeField] private GameObject[] shelfMushroomButtonPositions;
     
     [Header("Mushroom Images")]
     [SerializeField] private Sprite[] mushroomImages;
@@ -56,6 +59,9 @@ public class StoreDisplayHandler : MonoBehaviour
     int sightState;
     int shelfState;
     int numOnDisplay;
+    private int shelfLocation;
+    private string payment = "";
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
@@ -74,19 +80,32 @@ public class StoreDisplayHandler : MonoBehaviour
     }
     public void OpenStoreFront()
     {
-        //bagHandler setup
-        //Setup displays, rent
+        SetupDisplayShelves();
+        SetupRent();
+        bagHandler.DisplayBagContents();
+        SetMoney();
     }
 
-    public void SetupDisplayShelves()
+    private void SetupDisplayShelves()
     {
         for(int i = 0; i < gameManager.onDisplay.Length; i++)
         {
             if(gameManager.onDisplay[i] > 0)
             {
-                //make a displayed item script that holds public item number and opens remove item screen
+                GameObject mushroom = Instantiate(shelfMushroomButtons[gameManager.onDisplay[i]]);
+                mushroom.transform.SetParent(shelfMushroomButtonPositions[i].transform, false);
             }
         }
+    }
+
+    private void SetupRent()
+    {
+        rentText.text = gameManager.currentPayments.ToString();
+    }
+    
+    private void SetMoney()
+    {
+        moneyTotalText.text = numberHandler.GetMoney().ToString();
     }
 
     #region DisplayPriceScreen
@@ -141,9 +160,10 @@ public class StoreDisplayHandler : MonoBehaviour
                     break;
                 }
             }
-            //open keyboard, send name index
-            //create display method
-            //Refresh display
+            //open keyboard, send name index IF TIME 
+            gameManager.backpackContents[mushroomItem]--;
+            bagHandler.DisplayBagContents();
+            SetupDisplayShelves();
         }
     }
 
@@ -241,19 +261,105 @@ public class StoreDisplayHandler : MonoBehaviour
     #region RemoveMushroomDisplay
 
     //call bagHandler.IsBagFull();
+    public void RemoveMushroomDisplay(int item, int location)
+    {
+        removeScreen.SetActive(true);
+        removeScreenAcceptButton.SetActive(false);
+        if (bagHandler.IsBagFull())
+        {
+            removeScreenAcceptButton.SetActive(true);
+        }
+
+        shelfLocation = location;
+        mushroomItem = item;
+    }
+
+    public void PlaceInBag()
+    {
+        gameManager.backpackContents[mushroomItem]++;
+        gameManager.onDisplay[shelfLocation] = 0;
+        
+        bagHandler.DisplayBagContents();
+        SetupDisplayShelves();
+    }
 
     #endregion
 
-    #region SetDisplays
+    #region DisplayPayRentScreen
 
-    private void SetMoney()
+    public void DisplayPayRentScreen()
     {
-        moneyTotalText.text = numberHandler.GetMoney().ToString();
-    }
-    private void SetRent()
-    {
-        rentText.text = numberHandler.GetRent().ToString();
+        payRentScreen.SetActive(true);
+        rentPaymentText.text = "0";
     }
 
+    public void PayRentAmount()
+    {
+        if (payment != "")
+        {
+            if (Int32.Parse(payment) <= gameManager.totalMoney)
+            {
+                gameManager.currentPayments -= Int32.Parse(payment);
+                gameManager.totalMoney -= Int32.Parse(payment);
+            }
+        }
+        SetMoney();
+        SetupRent();
+    }
+
+    private void AddAmount(int num)
+    {
+        payment += num.ToString();
+        if (Int32.Parse(payment) < gameManager.totalMoney)
+        {
+            rentPaymentText.text = payment;
+        }
+        else
+        {
+            rentPaymentText.text = gameManager.totalMoney.ToString();
+        }
+    }
+    
+    public void AddZero()
+    {
+        AddAmount(0);
+    }
+    public void AddOne()
+    {
+        AddAmount(1);
+    }
+    public void AddTwo()
+    {
+        AddAmount(2);
+    }
+    public void AddThree()
+    {
+        AddAmount(3);
+    }
+    public void AddFour()
+    {
+        AddAmount(4);
+    }
+    public void AddFive()
+    {
+        AddAmount(5);
+    }
+    public void AddSix()
+    {
+        AddAmount(6);
+    }
+    public void AddSeven()
+    {
+        AddAmount(7);
+    }
+    public void AddEight()
+    {
+        AddAmount(8);
+    }
+    public void AddNine()
+    {
+        AddAmount(9);
+    }
     #endregion
+    
 }
