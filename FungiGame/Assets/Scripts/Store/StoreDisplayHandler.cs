@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class StoreDisplayHandler : MonoBehaviour
 {
+    //ToDo: Explore button
+    //ToDo: Turn off adding buttons once they're completed
     private GameManager gameManager;
     private NumberHandler numberHandler;
     private BagHandler bagHandler;
     
     [Header("Info Screens")]
-    [SerializeField] private GameObject payScreen;
     [SerializeField] private GameObject bagScreen;
     [SerializeField] private GameObject bagPriceAcceptButton;
     [SerializeField] private GameObject sightsScreen;
@@ -71,7 +72,7 @@ public class StoreDisplayHandler : MonoBehaviour
 
     private void CloseScreens()
     {
-        payScreen.SetActive(false);
+        payRentScreen.SetActive(false);
         bagScreen.SetActive(false);
         sightsScreen.SetActive(false);
         sellScreen.SetActive(false);
